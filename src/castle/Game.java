@@ -13,8 +13,22 @@ public class Game {
     handlers.put("bye", new HandlerBye(this));
     handlers.put("go", new HandlerGo(this));
     handlers.put("help", new HandlerHelp(this));
+    handlers.put("reset", new HandlerReset(this));
 
     createRooms();
+  }
+
+  public String getCmds() {
+    StringBuffer sb = new StringBuffer();
+    for (String word : handlers.keySet()) {
+      sb.append(word + " ");
+    }
+    return sb.toString();
+  }
+
+  public void reset() {
+    currentRoom = rooms.get("outside");
+    showPrompt();
   }
 
   // 用HashMap的方式给一个房间设置出口
