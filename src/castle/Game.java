@@ -17,6 +17,7 @@ public class Game {
     createRooms();
   }
 
+  // 用HashMap的方式给一个房间设置出口
   private void setExits(String roomStr, HashMap<String, String> exits) {
     Room room = rooms.get(roomStr);
     if (room != null) {

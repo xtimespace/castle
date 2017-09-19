@@ -11,6 +11,7 @@ public class Room {
     this.description = description;
   }
 
+  // 设置房间出口
   public void setExit(String dir, Room room) {
     exits.put(dir, room);
   }
